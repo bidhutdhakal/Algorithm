@@ -1,6 +1,6 @@
 
 
-
+Solution
 
 Q10. Find at least 2 instances of the n-queen problem that has no solution. 
 For 2 by 2 and 3 by 3 matrices, it is not possible to arrange queens so that no two queens attack each other. Hence, we cannot have a solution for n<4. That is when n=2 and n=3, there n-queen problem has no solution. 
