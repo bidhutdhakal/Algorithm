@@ -1,6 +1,57 @@
-asf
-a
-fas
-as
-f
-af
+
+
+
+
+Q10. Find at least 2 instances of the n-queen problem that has no solution. 
+For 2 by 2 and 3 by 3 matrices, it is not possible to arrange queens so that no two queens attack each other. Hence, we cannot have a solution for n<4. That is when n=2 and n=3, there n-queen problem has no solution. 
+
+Section 5.4
+Q13. Use the Backtracking algorithm for the Sum-of-Subsets problem (Algorithm 5.4) to find all combinations of the following numbers that sum to W = 52: w1 =2, w2=10, w3=13, w4=17,w5=22,w6=42
+Show the actions step by step.
+
+ 
+Section 5.5
+Q18 Show two possible solutions for the m-coloring problem to find all possible colorings of the graph below using the three colors red, green, and white.
+
+
+
+ Two possible solutions:
+1.	 {<v1,R>, <v2,G>, <v3, W>, <v4, G>, >v5,R>, <v6,W>}
+2.	 {<v1,R>, <v2,G>, <v3, R>, <v4, G>, >v5,W>, <v6,G>}
+See the solutions marked with blue color in the figure above. 
+Q19. Suppose that to color a graph properly we choose a starting vertex and a color to color as many vertices as possible. Then we select a new color and a new uncolored vertex to color as many more vertices as possible. We repeat this process until all the vertices of the graph are colored or all the colors are exhausted. Write an algorithm for this greedy approach to color a graph of n vertices. Analyze this algorithm and show the results using order notation.
+Inputs: positive integers n and m, and an undirected graph containing n vertices. The graph is represented by a two dimensional array W, which has both its rows and columns indexed from 1 to n, where W [i] [j] is true if there is an edge between ith vertex and the jth vertex and false otherwise. Outputs: all possible colorings of the graph, using at most m colors, so that no two adjacent vertices are the same color. The output for each coloring is an array vcolor indexed from 1 to n, where vcolor [i] is the color (an integer between 1 and m) assigned to the ith vertex.
+void vertex_coloring (index i)                        
+{
+    int color;
+    if (promising (i))
+        if (i==n)
+            count << vcolor [1] through vcolor [n]
+        else
+            for ( color = 1; color <= m; color ++) {
+                vcolor [i + 1]= color;
+                vertex_coloring(i + 1);
+            }
+            
+}
+bool promising (index i)
+{
+    index j;
+    bool switch;
+    
+    switch = true;
+    j=1;
+    while (j< i && switch) {
+        if (W [i][j] && vcolor [i]== vcolor [j])
+        switch =false;
+        j++;
+    }
+    return switch;
+}
+Analysis of the algorithm
+The algorithm begins by initializing the color at each vertex to 0. It selects source vertex color it, assign the color of value 1. To keep the track of the lowest number color that is not yet assigned, the algorithm declares a variable color. It then initializes the value of color 2, picking the next vertex and checking if adjacent vertices are of similar colors. The greedy algorithm assigns new color if all colors in the neighboring vertices are assigned some color. The process is then repeated for all vertices. 
+Time complexity = T(V*V)
+ =T(V^2)
+
+
+
